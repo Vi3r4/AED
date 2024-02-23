@@ -26,6 +26,12 @@ int main() {
      enqueue(fila2, 02);
      enqueue(fila2, 03);
      enqueue(fila2, 04);
+
+     concatenaFilas(fila1, fila2);
+     imprimeFila(fila1);
+
+     
+
 }
 
 
@@ -87,6 +93,23 @@ int estaVazio(Fila* fila) {
     return (fila->inicio == NULL);
 }
 
+void imprimeFila(Fila* fila){
+
+    if (estaVazio(fila))
+    {
+        printf("Fila vazia");
+    }else{
+        Nodo* aux = fila->inicio;
+        printf("Fila:");
+        while (aux != NULL){
+            printf("%d ", aux->info);
+            aux = aux->prox;
+        }
+        
+    }
+    
+}
+
 //comparar filas
 int maiorfila(Fila* f1, Fila* f2 ){
     
@@ -114,6 +137,11 @@ int maiorfila(Fila* f1, Fila* f2 ){
     
 }
 
+//concatena as filas f1 e f2, botando o resultado em f1 e esvaziando f2
 void concatenaFilas(Fila* f1, Fila* f2){
 
+    while (!estaVazio(f2)){
+        enqueue(f1, dequeue(f2));
+    }
+    
 }
