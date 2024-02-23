@@ -26,11 +26,6 @@ int main() {
      enqueue(fila2, 02);
      enqueue(fila2, 03);
      enqueue(fila2, 04);
-
-     
-
-     
-
 }
 
 
